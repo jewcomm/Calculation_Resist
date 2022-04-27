@@ -1,0 +1,77 @@
+﻿<Window x:Class="KRSCH.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KRSCH"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Menu Height="25" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="4">
+            <MenuItem Header="Инструкция" Click="OpenInstruction"/>
+            <MenuItem Header="Приставки СИ" Click="OpenSi"/>
+        </Menu>
+
+
+        <Image Source="{Binding ImgMode}" Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" Stretch="Uniform" />
+
+         <TextBlock Text="Реостат " Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+        <Slider Value="{Binding Path=Reostat, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Minimum="1" Maximum="1000" SelectionStart="1"
+                Height="25" Width="100" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"
+                VerticalContentAlignment="Center" TickPlacement="BottomRight" TickFrequency="200"
+                ToolTip="{Binding Path=Value, RelativeSource={RelativeSource Self}}"/>
+        <ComboBox Grid.Column="3" Grid.Row="1" Height="30"
+                  ItemsSource="{Binding StrUnits}" ItemStringFormat="{}{0}Ом" 
+                  SelectedValue="{Binding ReoSelectionUnit}" IsEditable="False" VerticalContentAlignment="Center" />
+
+        <TextBlock Text="Резистор&#10;постоянный   " Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" />
+        <TextBox Text="{Binding Path=ResistString, UpdateSourceTrigger= PropertyChanged, Mode=TwoWay}"  
+                 Height="30" Width="100" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalContentAlignment="Center"
+                 MaxLength="7" />
+        <ComboBox Grid.Column="3" Grid.Row="2" Height="30"
+                  ItemsSource="{Binding StrUnits}" ItemStringFormat="{}{0}Ом" 
+                  SelectedValue="{Binding ResSelectionUnit}" IsEditable="False" VerticalContentAlignment="Center" />
+
+        <TextBlock Text="V = " Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Text="{Binding Path=VoltageString, UpdateSourceTrigger= PropertyChanged, Mode=TwoWay}"
+                 Height="30" Width="100" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" VerticalContentAlignment="Center"
+                 MaxLength="7"/>
+        <ComboBox Grid.Column="3" Grid.Row="3" Height="30"
+                  ItemsSource="{Binding StrUnits}" ItemStringFormat="{}{0}В" 
+                  SelectedValue="{Binding VolSelectionUnit}" IsEditable="False"  VerticalContentAlignment="Center"/>
+
+        <TextBlock Text="A1 = " Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Text="{Binding Path=Current, UpdateSourceTrigger= PropertyChanged, Mode=OneWay}" 
+                 Height="30" Width="100" Grid.Column="2" Grid.Row="4" IsReadOnly="True" HorizontalAlignment="Left" VerticalContentAlignment="Center" />
+        <TextBox Text="{Binding Path=CurUnits, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                 Height="30" Grid.Column="3" Grid.Row="4" VerticalContentAlignment="Center"
+                 IsReadOnly="True" Background="LightGray"/>
+
+        <TextBlock Text="A2 = " Grid.Column="1" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Text="{Binding Path=SecondCurrent, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                 Height="30" Width="100" Grid.Column="2" Grid.Row="5" IsReadOnly="True" HorizontalAlignment="Left" VerticalContentAlignment="Center" />
+        <TextBox Text="{Binding Path=SecondCurUnits, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                 Height="30" Grid.Column="3" Grid.Row="5" VerticalContentAlignment="Center" 
+                 IsReadOnly="True" Background="LightGray"/>
+
+        <RadioButton GroupName="Mode" Content="Параллельное соединение" Grid.Row="5"  IsChecked="{Binding ParrConnect}"/>
+        <RadioButton GroupName="Mode" Content="Последовательное соединение" Grid.Row="5" IsChecked="{Binding LineConnect}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,20,0,0"/>
+
+
+    </Grid>
+</Window>

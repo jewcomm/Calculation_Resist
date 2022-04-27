@@ -1,0 +1,15 @@
+C:\Users\alexu\source\repos\KRSCH\KRSCH\bin\Debug\KRSCH.exe.config
+C:\Users\alexu\source\repos\KRSCH\KRSCH\bin\Debug\KRSCH.exe
+C:\Users\alexu\source\repos\KRSCH\KRSCH\bin\Debug\KRSCH.pdb
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\MainWindow.g.cs
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\App.g.cs
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\KRSCH_MarkupCompile.cache
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\KRSCH_MarkupCompile.lref
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\MainWindow.baml
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\KRSCH.g.resources
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\KRSCH.Properties.Resources.resources
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\KRSCH.csproj.GenerateResource.cache
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\KRSCH.csproj.CoreCompileInputs.cache
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\KRSCH.exe
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\KRSCH.pdb
+C:\Users\alexu\source\repos\KRSCH\KRSCH\obj\Debug\KRSCH.csprojAssemblyReference.cache
